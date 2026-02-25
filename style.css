@@ -1,84 +1,98 @@
+/* Remove margens padrão */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #6b3e1e;
+    color: #f5f5f5; /* texto claro */
 }
 
-/* CAPA */
+html, body {
+    height: 100%;
+}
+
+/* CAPA RESPONSIVA */
 .capa {
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url("imagens/capa.jpg");
+    background-image: url("imagens/capa.jpg");
     background-size: cover;
-    background-position: center;
-    height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 32px;
-    font-weight: bold;
+    background-position: center 70%; /* mais centralizada para baixo */
+    background-repeat: no-repeat;
+    height: 300px;
 }
-
-/* PERFIL */
 .perfil {
-    padding: 20px;
-    background-color: white;
+    text-align: center;
+    padding: 40px 20px;
 }
-
 .foto-perfil {
-    width: 150px;
+    width: 200px;
     border-radius: 50%;
-    margin-top: -75px;
-    border: 4px solid white;
 }
 
 .descricao-curta {
-    max-width: 700px;
+    max-width: 600px;
     margin: 20px auto;
     font-size: 18px;
 }
 
 /* GALERIA */
 .galeria {
-    padding: 30px;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.fotos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 imagens por linha no PC */
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .fotos img {
-    width: 250px;
-    margin: 10px;
-    border-radius: 10px;
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* evita distorção */
+    border-radius: 8px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .fotos {
+        grid-template-columns: repeat(2, 1fr); /* 2 por linha no tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .fotos {
+        grid-template-columns: 1fr; /* 1 por linha no celular */
+    }
 }
 
 /* CONTATO */
 .contato {
-    background-color: #2e7d32;
-    color: white;
-    padding: 30px;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #4a2812;  /* tom mais escuro */
+    color: #f5f5f5;
 }
 
 /* MAPA */
 .mapa {
-    padding: 20px;
+    text-align: center;
+    padding: 40px 20px;
 }
 
-/* DESCRIÇÃO DETALHADA */
+/* DESCRIÇÃO */
 .descricao-detalhada {
-    padding: 30px;
+    padding: 40px 20px;
     max-width: 900px;
     margin: auto;
 }
 
 /* RODAPÉ */
 footer {
-    background-color: #111;
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
     color: white;
-    padding: 15px;
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-    .fotos img {
-        width: 90%;
-    }
 }
